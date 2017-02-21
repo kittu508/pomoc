@@ -1,0 +1,20 @@
+buildscript {
+
+   repositories {
+      mavenCentral()
+   }
+}
+
+allprojects {
+   apply plugin: 'idea'
+
+}
+project(':engines') {
+   subprojects {
+      apply plugin: 'java'
+   }
+   project('pomoc-restapi') {
+   }
+   project('pomoc-web') {
+   }
+}

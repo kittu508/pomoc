@@ -1,0 +1,4 @@
+rootProject.name = 'pomoc'
+
+include ':engines:pomoc-restapi'
+include ':engines:pomoc-web'

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/engines.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/engines.iml" group="engines" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pomoc.iml" filepath="$PROJECT_DIR$/.idea/modules/pomoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi.iml" group="engines/pomoc-restapi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi_main.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi_main.iml" group="engines/pomoc-restapi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi_test.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-restapi/pomoc-restapi_test.iml" group="engines/pomoc-restapi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web.iml" group="engines/pomoc-web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web_main.iml" group="engines/pomoc-web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/engines/pomoc-web/pomoc-web_test.iml" group="engines/pomoc-web" />
+    </modules>
+  </component>
+</project>
