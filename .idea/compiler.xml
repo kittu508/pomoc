@@ -18,15 +18,5 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="engines_main" target="1.8" />
-      <module name="engines_test" target="1.8" />
-      <module name="pomoc-restapi_main" target="1.8" />
-      <module name="pomoc-restapi_test" target="1.8" />
-      <module name="pomoc-web_main" target="1.8" />
-      <module name="pomoc-web_test" target="1.8" />
-      <module name="pomoc_main" target="1.8" />
-      <module name="pomoc_test" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

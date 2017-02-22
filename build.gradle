@@ -1,19 +1,56 @@
 buildscript {
+   ext {
+      groupId = "com.pomoc"
+      artifactId = "pomoc"
+      release = "0.1"
+      springVersion = "4.1.6.RELEASE"
+      springBootVersion = "1.2.3.RELEASE"
+      junitVersion = "4.11"               // Test only
+      mockitoVersion = "1.10.19"          // Test only
+      powermockVersion = "1.6.5"
+
+   }
 
    repositories {
       mavenCentral()
+   }
+
+   List springBootPlugin = ["org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"]
+   dependencies {
+      classpath springBootPlugin
    }
 }
 
 allprojects {
    apply plugin: 'idea'
-
 }
+List springBoot = ["org.springframework.boot:spring-boot-loader:${springBootVersion}",
+                   "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+                   "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
+                   "org.springframework:spring-tx:${springVersion}"]
+
+List unitTest = ["junit:junit:${junitVersion}",
+                 "junit:junit-dep:${junitVersion}",
+                 "org.mockito:mockito-core:${mockitoVersion}",
+                 "org.powermock:powermock-module-junit4:${powermockVersion}",
+                 "org.powermock:powermock-api-mockito:${powermockVersion}",
+                 "org.powermock:powermock-core:${powermockVersion}",
+                 "org.powermock:powermock-module-junit4:${powermockVersion}"
+]
 project(':engines') {
    subprojects {
       apply plugin: 'java'
+      apply plugin: 'spring-boot'
+
+      boorRun{
+         systemProperties = System.getProperties()
+      }
    }
    project('pomoc-restapi') {
+      dependencies {
+         compile springBoot
+         testCompile unitTest
+      }
    }
    project('pomoc-web') {
    }
