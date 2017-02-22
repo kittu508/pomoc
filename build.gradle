@@ -8,7 +8,10 @@ buildscript {
       junitVersion = "4.11"               // Test only
       mockitoVersion = "1.10.19"          // Test only
       powermockVersion = "1.6.5"
+      lombokVersion = "1.16.14"
 
+      // Utility Libraries
+      jodaVersion = "2.9.2"
    }
 
    repositories {
@@ -23,10 +26,11 @@ buildscript {
 
 allprojects {
    apply plugin: 'idea'
+   apply plugin: 'java'
 }
 List springBoot = ["org.springframework.boot:spring-boot-loader:${springBootVersion}",
+                   "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}",
                    "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
-                   "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
                    "org.springframework:spring-tx:${springVersion}"]
 
 List unitTest = ["junit:junit:${junitVersion}",
@@ -37,16 +41,31 @@ List unitTest = ["junit:junit:${junitVersion}",
                  "org.powermock:powermock-core:${powermockVersion}",
                  "org.powermock:powermock-module-junit4:${powermockVersion}"
 ]
+
+List lombok =["org.projectlombok:lombok:${lombokVersion}"]
+List joda = ["joda-time:joda-time:${jodaVersion}"]
+
+allprojects{
+   apply plugin: 'idea'
+
+}
+subprojects {
+   apply plugin: 'java'
+   apply plugin: 'maven'
+   dependencies{
+      compile lombok, unitTest, springBoot
+   }
+   repositories {
+      mavenCentral()
+   }
+}
 project(':engines') {
    subprojects {
-      apply plugin: 'java'
       apply plugin: 'spring-boot'
-
-
    }
    project('pomoc-restapi') {
       dependencies {
-         compile springBoot
+         compile project(":components:pomoc-openapi")
          testCompile unitTest
       }
       repositories {
@@ -54,5 +73,20 @@ project(':engines') {
       }
    }
    project('pomoc-web') {
+      dependencies {
+         testCompile unitTest
+      }
+      repositories {
+         mavenCentral()
+      }
    }
+}
+project(':components'){
+
+   project('pomoc-openapi'){
+      dependencies {
+         testCompile unitTest
+      }
+   }
+
 }

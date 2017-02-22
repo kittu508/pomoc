@@ -1,4 +1,3 @@
-rootProject.name = 'pomoc'
-
 include ':engines:pomoc-restapi'
 include ':engines:pomoc-web'
+include  ':components:pomoc-openapi'
