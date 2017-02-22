@@ -3,8 +3,8 @@ buildscript {
       groupId = "com.pomoc"
       artifactId = "pomoc"
       release = "0.1"
-      springVersion = "4.1.6.RELEASE"
-      springBootVersion = "1.2.3.RELEASE"
+      springVersion = "4.3.6.RELEASE"
+      springBootVersion = "1.5.1.RELEASE"
       junitVersion = "4.11"               // Test only
       mockitoVersion = "1.10.19"          // Test only
       powermockVersion = "1.6.5"
@@ -42,14 +42,15 @@ project(':engines') {
       apply plugin: 'java'
       apply plugin: 'spring-boot'
 
-      boorRun{
-         systemProperties = System.getProperties()
-      }
+
    }
    project('pomoc-restapi') {
       dependencies {
          compile springBoot
          testCompile unitTest
+      }
+      repositories {
+         mavenCentral()
       }
    }
    project('pomoc-web') {
